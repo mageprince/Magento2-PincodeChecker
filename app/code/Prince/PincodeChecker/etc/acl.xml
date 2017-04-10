@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Prince_PincodeChecker::pincodechecker" sortOrder="10" title="pincodechecker">
+					<resource id="Prince_PincodeChecker::pincodechecker_save" sortOrder="10" title="Save pincodechecker"/>
+					<resource id="Prince_PincodeChecker::pincodechecker_delete" sortOrder="20" title="Delete pincodechecker"/>
+					<resource id="Prince_PincodeChecker::pincodechecker_update" sortOrder="30" title="Update pincodechecker"/>
+					<resource id="Prince_PincodeChecker::pincodechecker_view" sortOrder="40" title="View pincodechecker"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>
