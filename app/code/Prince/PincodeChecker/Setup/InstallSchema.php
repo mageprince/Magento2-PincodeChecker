@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Prince\PincodeChecker\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;

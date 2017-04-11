@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Prince\PincodeChecker\Model\Pincodechecker;
 
 use Prince\PincodeChecker\Model\ResourceModel\Pincodechecker\CollectionFactory;

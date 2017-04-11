@@ -4,8 +4,14 @@ namespace Prince\PincodeChecker\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
+    /**
+     * @var \Magento\Framework\Controller\Result\JsonFactory
+     */
     protected $resultPageFactory;
 
+    /**
+     * @var \Prince\PincodeChecker\Helper\Data
+     */
     protected $helper;
 
      /**

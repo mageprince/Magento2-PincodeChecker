@@ -1,4 +1,5 @@
 <?php
+
 namespace Prince\PincodeChecker\Model\Import;
 
 use Prince\PincodeChecker\Model\Import\Pincode\RowValidatorInterface as ValidatorInterface;

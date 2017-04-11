@@ -8,12 +8,9 @@
 
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
-<?php 
+<?php
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $helper = $objectManager->get('Prince\PincodeChecker\Helper\Data');
-$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
-$id = $product->getId(); 
-$url = $this->getUrl('pincodechecker');
 ?>
 <div class="pincode-check">
 <div id="pincode-status">
@@ -76,6 +73,15 @@ $url = $this->getUrl('pincodechecker');
         }
     }
 </script>
+<?php
+//Get current product Id
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+$id = $product->getId(); 
+
+//Get controller url
+$url = $this->getUrl('pincodechecker');
+?>
+
 <script type="text/javascript">
 require(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
 
