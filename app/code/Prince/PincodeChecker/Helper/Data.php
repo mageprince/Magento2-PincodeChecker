@@ -9,6 +9,13 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     protected $product;
 
+    protected $resultFactory;
+
+    /**
+     * @var \Magento\Store\Model\ScopeInterface
+     */
+    protected $scopeConfig;
+
     /**
      * Constructor
      *
@@ -19,11 +26,15 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Catalog\Model\Product $product,
-        \Prince\PincodeChecker\Model\ResourceModel\Pincodechecker\CollectionFactory $pincodeCollection
+        \Prince\PincodeChecker\Model\ResourceModel\Pincodechecker\CollectionFactory $pincodeCollection,
+        \Magento\Framework\Controller\ResultFactory $resultFactory,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     )
     {
         $this->pincodeCollection = $pincodeCollection;
         $this->product = $product;
+        $this->resultFactory = $resultFactory;
+        $this->scopeConfig = $scopeConfig;
         parent::__construct($context);
     }
 
@@ -75,11 +86,38 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getMessage($status, $pincode)
     {
         if($status){
-            $message = "<h3>Pincode \"{$pincode}\" is Available For This Product</h3>";
+            $message = "<h3>".$this->getSuccessMessage()."</h3>";
         }else{
-            $message = "<h3 style='color:red'>Pincode \"{$pincode}\" is Not Available For This Product</h3>";
+            $message = "<h3 style='color:red'>".$this->getFailMessage()."</h3>";
         }
 
         return $message;
+    }
+
+    public function getRedirect()
+    {
+        $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
+        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+        return $resultRedirect;
+    }
+
+    public function getIsEnable()
+    {
+        return $this->scopeConfig->getValue('pincode/general/active', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+
+    public function getIsCheckonAddtoCart()
+    {
+        return $this->scopeConfig->getValue('pincode/general/checkaddtocart', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+
+    public function getSuccessMessage()
+    {
+        return $this->scopeConfig->getValue('pincode/general/successmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+
+    public function getFailMessage()
+    {
+        return $this->scopeConfig->getValue('pincode/general/failmessage', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 }

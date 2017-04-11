@@ -6,13 +6,13 @@
     <body>
         <referenceContainer name="product.info.form.content">
             <referenceBlock name="product.info.addtocart">
-                <action method="setTemplate">
+                <action method="setTemplate" ifconfig="pincode/general/active">
                     <argument name="template" xsi:type="string">Prince_PincodeChecker::product/view/addtocart.phtml</argument>
                 </action>
             </referenceBlock>
          </referenceContainer>
          <referenceBlock name="product.info.addtocart.additional">
-            <action method="setTemplate">
+            <action method="setTemplate" ifconfig="pincode/general/active">
                 <argument name="template" xsi:type="string">Prince_PincodeChecker::product/view/addtocart.phtml</argument>
             </action>
         </referenceBlock>

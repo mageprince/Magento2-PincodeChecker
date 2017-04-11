@@ -6,6 +6,9 @@
 			<argument name="resourceModel" xsi:type="string">Prince\PincodeChecker\Model\ResourceModel\Pincodechecker\Collection</argument>
 		</arguments>
 	</virtualType>
+	<type name="Magento\Checkout\Model\Cart">
+    	<plugin name="pincodeChecker" type="Prince\PincodeChecker\Plugin\PincodeChecker" sortOrder="1" disabled="false" />
+ 	</type>
 	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
 		<arguments>
 			<argument name="collections" xsi:type="array">
@@ -14,3 +17,5 @@
 		</arguments>
 	</type>
 </config>
+
+
