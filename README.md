@@ -4,7 +4,8 @@ This module is used to check availability of pincode for product. You can also e
 Installation instructions
 =========================
 
-* Copy the content of the repo to the Magento 2 root folder
+* Create a folder {Magento root}/app/code/Prince/PincodeChecker 
+* Copy the content of the repository 
 * Run command:
 <b>php bin/magento setup:upgrade</b>
 * Run Command:
