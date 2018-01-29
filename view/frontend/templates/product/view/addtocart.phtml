@@ -14,12 +14,12 @@ $helper = $objectManager->get('Prince\PincodeChecker\Helper\Data');
 ?>
 <div class="pincode-check">
 <div id="pincode-status">
-    <h1>Pincode Status</h1>
+    <h1><?php echo __("Pincode Status"); ?></h1>
     <div id="pincode-avail"></div>
 </div>
     <div class="pincode-field">
-        <input type="text" id="pincode" name="pincode" <?php if($helper->getIsCheckonAddtoCart()): ?> class="required-entry" <?php endif;?> />
-        <input type="button" title="Pincode Check" id="pincode-check" class="action primary" value="Check" />
+        <input type="button" title="<?php echo __('Check Pincode'); ?>" id="pincode-check" class="action primary" value="<?php echo __('Check'); ?>" />
+        <input type="text" id="pincode" name="pincode" <?php if($helper->getIsCheckonAddtoCart()): ?> class="required-entry" <?php endif;?> placeholder="<?php echo __('Enter Pincode'); ?>"/>
     </div>
 </div>
 <?php $_product = $block->getProduct(); ?>

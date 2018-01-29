@@ -1,0 +1,13 @@
+.pincode-field {
+    padding: 15px 0px;
+    width: 55%;
+}
+
+#pincode-check {
+    float: right;
+    padding: 5px 10px;
+}
+
+#pincode {
+    width: 75%;
+}

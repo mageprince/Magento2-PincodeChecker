@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="pincodechecker" translate="label" sortOrder="1000">
-            <label>Pincode Settings</label>
+        <tab id="mageprince" translate="label" sortOrder="110">
+            <label>MagePrince</label>
         </tab>
         <section id="pincode" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
-            <label>Settings</label>
-            <tab>pincodechecker</tab>
+            <label>Pincode Checker</label>
+            <tab>mageprince</tab>
             <resource>Magento_Backend::content</resource>
             <group id="general" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Settings</label>

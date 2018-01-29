@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+        <add id="Prince_PincodeChecker::top" module="Prince_Adminlogs" resource="Magento_Backend::content" sortOrder="20" title="Pincode Checker"/>
+		<add action="prince_pincodechecker/pincodechecker/index" id="prince_pincodechecker::pincodechecker" module="Prince_PincodeChecker" parent="Prince_PincodeChecker::top" resource="Magento_Backend::content" sortOrder="10" title="Pincode Checker"/>
+        <add action="adminhtml/system_config/edit/section/pincode" id="prince_pincodechecker::pincodechecker_settings" module="Prince_PincodeChecker" parent="Prince_PincodeChecker::top" resource="Magento_Backend::content" sortOrder="20" title="Settings"/>
+	</menu>
+</config>

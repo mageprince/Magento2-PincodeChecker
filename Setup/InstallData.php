@@ -2,18 +2,31 @@
 
 namespace Prince\PincodeChecker\Setup;
 
-use Magento\Framework\Setup\InstallSchemaInterface;
+use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Eav\Setup\EavSetup;
+use Magento\Eav\Setup\EavSetupFactory;
 
-class InstallSchema implements InstallSchemaInterface
+class InstallData implements InstallDataInterface
 {
+    private $eavSetupFactory;
+
+    /**
+     * Constructor
+     *
+     * @param \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
+     */
+    public function __construct(EavSetupFactory $eavSetupFactory)
+    {
+        $this->eavSetupFactory = $eavSetupFactory;
+    }
 
     /**
      * {@inheritdoc}
      */
     public function install(
-        SchemaSetupInterface $setup,
+        ModuleDataSetupInterface $setup,
         ModuleContextInterface $context
     ) {
         $installer = $setup;
